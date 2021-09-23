@@ -4,9 +4,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 300px;
+  min-width: 300px;
   height: 100vh;
-  border: 1px solid red;
   padding-top: 30px;
+  background: white;
 `;
 
 export const Header = styled.div`
@@ -14,7 +15,7 @@ export const Header = styled.div`
   padding: 0 24px;
   height: 100px;
   align-items: center;
-  margin-bottom: 64px;
+  margin-bottom: 50px;
 `;
 
 Header.Logo = styled.img`
@@ -28,7 +29,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-right: 24px;
-  /* border-left: ${({ left }) => left && '4px solid #FCB600'}; */
+  height: ${({ left }) => left && '100%'};
 `;
 
 Wrapper.Title = styled.div`
@@ -58,7 +59,7 @@ export const Link = styled(NavLink)`
   width: 100%;
   padding: 10px 40px;
   color: #2d3a45;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-radius: 0px 6px 6px 0px;
   transition: all 0.3s;
 `;
@@ -88,4 +89,5 @@ export const Logout = styled.div`
   line-height: 19px;
   color: #2d3a45;
   cursor: pointer;
+  margin-bottom: 50px;
 `;
