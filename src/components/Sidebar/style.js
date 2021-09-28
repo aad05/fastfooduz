@@ -8,6 +8,8 @@ export const Container = styled.div`
   height: 100vh;
   padding-top: 30px;
   background: white;
+  position: sticky;
+  top: 0;
 `;
 
 export const Header = styled.div`
