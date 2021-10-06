@@ -2,8 +2,15 @@ import React from 'react';
 import Done from '../Generic/Done';
 import Cancel from '../Generic/Cancel';
 import { Container, Footer, IconWrapper, Info, Timer, Wrapper } from './style';
+import { Buyurtma } from '../../context/buyurtmalar';
 
 export const ProductCard = ({ value }) => {
+  const [card, setCard] = Buyurtma();
+  const onCancel = (value) => {
+    let newData = card[value.categoria].filter((e) => e.id !== value.id);
+    setCard({ ...card, [value.categoria]: newData });
+    console.log(newData);
+  };
   return (
     <Container>
       <Wrapper>
@@ -45,7 +52,7 @@ export const ProductCard = ({ value }) => {
             <Info.Total>Operator</Info.Total>
             <Info.Name>{value?.operator?.name || 'Not Available'}</Info.Name>
           </div>
-          <Cancel />
+          <Cancel onClick={() => onCancel(value)} />
         </Footer>
         <Footer>
           <div>

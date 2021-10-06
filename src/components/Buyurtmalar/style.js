@@ -6,6 +6,7 @@ import { ReactComponent as menuV } from '../../assets/icons/menuV.svg';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 export const Header = styled.div`

@@ -8,6 +8,8 @@ import { ReactComponent as hodimlar } from '../assets/icons/settings.svg';
 import { ReactComponent as katalog } from '../assets/icons/settings.svg';
 
 import Generic from '../pages/Generic';
+import Katalog from '../pages/Katalog';
+
 import Buyurtmalar from '../pages/Buyurtmalar';
 
 export const sidebar = [
@@ -72,7 +74,7 @@ export const sidebar = [
     title: 'Katalog',
     path: '/katalog',
     Icon: katalog,
-    Component: Generic,
+    Component: Katalog,
     hidden: false,
   },
 ];

@@ -27,6 +27,7 @@ export const Container = styled.div`
 export const Header = styled.div`
   display: flex;
   background: white;
+  width: 100%;
   @media (max-width: 1440px) {
     flex-direction: column;
     width: 100%;
@@ -122,8 +123,10 @@ export const IconWrapper = styled.div`
 export const MenuH = styled(menuH)`
   width: 16px;
   height: 16px;
+  fill: ${({ active }) => active && '#8D9BA8'};
 `;
 export const MenuV = styled(menuV)`
   width: 16px;
   height: 16px;
+  fill: ${({ active }) => (active ? '#8D9BA8' : 'transparent')};
 `;

@@ -10,9 +10,10 @@ import {
   IconWrapper,
 } from './style';
 
-export const Navbar = () => {
+export const Navbar = ({ onClick }) => {
   const [isActive, setIsActive] = useState('Yangi');
   const [on, setOn] = useState(true);
+  console.log(on);
   return (
     <Header>
       {/* 1 */}
@@ -21,10 +22,10 @@ export const Navbar = () => {
         <Add.Title>Yangi buyurtma qo'shish</Add.Title>
         <Toggle toggle>
           <IconWrapper active={on} onClick={() => setOn(true)}>
-            <MenuH />
+            <MenuH active={on} />
           </IconWrapper>
           <IconWrapper active={!on} onClick={() => setOn(false)}>
-            <MenuV />
+            <MenuV active={!on} />
           </IconWrapper>
         </Toggle>
       </Wrapper>
@@ -60,11 +61,23 @@ export const Navbar = () => {
       {/* 3 */}
       <Wrapper order='3'>
         <Toggle>
-          <IconWrapper active={on} onClick={() => setOn(true)}>
-            <MenuH />
+          <IconWrapper
+            active={on}
+            onClick={() => {
+              onClick(true);
+              setOn(true);
+            }}
+          >
+            <MenuH active={on} />
           </IconWrapper>
-          <IconWrapper active={!on} onClick={() => setOn(false)}>
-            <MenuV />
+          <IconWrapper
+            active={!on}
+            onClick={() => {
+              onClick(false);
+              setOn(false);
+            }}
+          >
+            <MenuV active={!on} />
           </IconWrapper>
         </Toggle>
       </Wrapper>

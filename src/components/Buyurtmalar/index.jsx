@@ -4,10 +4,11 @@ import { Container } from './style';
 import Body from './Body';
 
 export const Buyurtmalar = () => {
+  const [active, setActive] = useState(true);
   return (
     <Container>
-      <Navbar />
-      <Body />
+      <Navbar onClick={(state) => setActive(state)} />
+      <Body active={active} />
     </Container>
   );
 };

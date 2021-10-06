@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Cancel } from './style';
 
-export const Index = () => {
+export const Index = ({ onClick }) => {
   return (
-    <Container>
+    <Container onClick={onClick}>
       <Cancel />
     </Container>
   );
